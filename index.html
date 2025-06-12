@@ -162,45 +162,50 @@
     <main class="flex flex-col flex-1 gap-10" role="main" tabindex="-1">
 
       <!-- Explore & Contribute Buttons -->
-      <section aria-label="Sección Explora y Contribuye" class="my-12 px-4">
-  <h2 class="text-3xl font-semibold text-blue-700 mb-6 text-center">Explora y Contribuye</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+<section class="py-12 bg-gray-100">
+  <h2 class="text-3xl font-bold text-center text-blue-700 mb-10">Explora y Contribuye</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-6">
 
     <!-- Becas Nacionales -->
-    <a href="https://becas.gob.do/" target="_blank" rel="noopener noreferrer" 
-       class="bg-red-600 hover:bg-red-700 text-white px-5 py-6 rounded-lg shadow-md font-semibold transition flex flex-col items-center">
-      <!-- Ícono gorrito con bandera -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path fill="#ffffff" d="M12 3L1 9l11 6 9-4.91v5.66H21v-7L12 3z" />
-        <path stroke="#ffffff" stroke-width="2" d="M12 21V15M12 3L1 9l11 6 9-4.91" />
-      </svg>
-      <span class="text-2xl">Becas Nacionales</span>
-    </a>
-
+    <a href="https://becas.gob.do/" target="_blank" rel="noopener noreferrer"
+  class="bg-red-600 hover:bg-red-700 text-white rounded-2xl shadow-xl p-6 flex flex-col items-center transition-transform transform hover:scale-105 no-underline">
+  <div class="bg-white text-red-600 p-4 rounded-full shadow-lg mb-4">
+    <svg class="w-10 h-10 text-red-300 animate-spin duration-[4000ms]" fill="none" stroke="currentColor" stroke-width="2"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 14L3 9l9-5 9 5-9 5zm0 0v6m-4.5-1.5h9" />
+    </svg>
+  </div>
+  <p class="text-2xl font-semibold text-center">Becas Nacionales</p>
+</a>
     <!-- Becas Internacionales -->
-    <a href="https://becas.gob.do/convocatorias/42" target="_blank" rel="noopener noreferrer" 
-       class="bg-green-600 hover:bg-green-700 text-white px-5 py-6 rounded-lg shadow-md font-semibold transition flex flex-col items-center">
-      <!-- Ícono gorrito con avión -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path fill="#ffffff" d="M2.5 19.5l19-7.5-19-7.5v6.5l13 1-13 1z" />
-        <path stroke="#ffffff" stroke-width="2" d="M2.5 19.5l19-7.5-19-7.5v6.5l13 1-13 1z" />
-      </svg>
-      <span class="text-2xl">Becas Internacionales</span>
+    <a href="https://becas.gob.do/convocatorias/42" target="_blank" rel="noopener noreferrer"
+      class="bg-green-600 hover:bg-green-700 text-white rounded-2xl shadow-xl p-6 flex flex-col items-center transition-transform transform hover:scale-105 no-underline">
+      <div class="bg-white text-green-600 p-4 rounded-full shadow-lg mb-4">
+        <svg class="w-10 h-10 text-green-300 animate-bounce" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M10.5 12.5L3 10l7.5-2.5L17 2v7.5l4 1.5-4 1.5V22z" />
+        </svg>
+      </div>
+      <p class="text-2xl font-semibold text-center">Becas Internacionales</p>
     </a>
 
     <!-- Leyes Dominicanas -->
-    <a href="https://republica-dominicana.justia.com/nacionales/leyes/" target="_blank" rel="noopener noreferrer" 
-       class="bg-blue-600 hover:bg-purple-700 text-white px-5 py-6 rounded-lg shadow-md font-semibold transition flex flex-col items-center">
-      <!-- Ícono mazo de juez -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke="#ffffff" stroke-width="2" d="M9 13l6-6m-6 0l6 6M5 21h14M4 17h16" />
-      </svg>
-      <span class="text-2xl">Leyes Dominicanas</span>
+    <a href="https://republica-dominicana.justia.com/nacionales/leyes/" target="_blank" rel="noopener noreferrer"
+      class="bg-blue-600 hover:bg-blue-700 text-white rounded-2xl shadow-xl p-6 flex flex-col items-center transition-transform transform hover:scale-105 no-underline">
+      <div class="bg-white text-blue-600 p-4 rounded-full shadow-lg mb-4">
+        <svg class="w-10 h-10 text-blue-300 animate-spin duration-[4000ms]" fill="none" stroke="currentColor"
+          stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M5 8h14M7 8v5a5 5 0 0010 0V8m-5 13v-4m-5 4h10" />
+        </svg>
+      </div>
+      <p class="text-2xl font-semibold text-center">Leyes Dominicanas</p>
     </a>
 
   </div>
 </section>
-
       <!-- Recursos Académicos -->
       <section aria-label="Recursos Académicos">
         <h2 class="text-2xl font-semibold text-gray-900 mb-3">Recursos Académicos</h2>
