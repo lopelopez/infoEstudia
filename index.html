@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Educativo Municipal</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- Encabezado tipo bandera -->
+<!-- Header mejorado -->
+<header class="bg-gradient-to-r from-[#002D62] via-white to-[#d52b1e] py-4 px-6 shadow-md flex flex-col sm:flex-row justify-between items-center gap-4">
+  <div class="flex items-center gap-4">
+    <img src="logo.png" alt="Logotipo del Portal Educativo Municipal" class="h-14 w-14 rounded-full border-4 border-white shadow-sm" />
+    <div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white drop-shadow-md">Portal Educativo Municipal</h1>
+      <p class="text-sm font-medium italic text-white -800">¡Educación y orgullo dominicano!</p>
+    </div>
+  </div>
+  <div id="bienvenida" class="text-lg sm:text-2xl italic font-semibold text-wihite-900" aria-live="polite">Bienvenido</div>
+</header>
+
+<!-- Navegación moderna -->
+<nav class="bg-[#002D62] text-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="#" class="text-xl font-bold text-white hover:text-blue-200 transition">Inicio</a>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#" class="text-white hover:text-blue-200 text-sm font-medium transition">Recursos</a>
+        <a href="#" class="text-white hover:text-blue-200 text-sm font-medium transition">Proyectos</a>
+        <a href="#" class="text-white hover:text-blue-200 text-sm font-medium transition">Trámites</a>
+        <a href="#" class="text-white hover:text-blue-200 text-sm font-medium transition">Contacto</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="hidden md:hidden mt-2 space-y-2">
+      <a href="#" class="block text-white hover:text-blue-200 text-sm font-medium transition">Recursos</a>
+      <a href="#" class="block text-white hover:text-blue-200 text-sm font-medium transition">Proyectos</a>
+      <a href="#" class="block text-white hover:text-blue-200 text-sm font-medium transition">Trámites</a>
+      <a href="#" class="block text-white hover:text-blue-200 text-sm font-medium transition">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Script para abrir/cerrar menú en móviles -->
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+<style>
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f9fafb; /* Gris muy suave para menos brillo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: #1e293b; /* Azul oscuro para texto */
+  }
+
+  .fondo-bandera {
+    background: linear-gradient(90deg, #002D62 33.3%, #ffffff 33.3% 66.6%, #d52b1e 66.6%);
+  }
+
+  header, footer {
+    user-select: none;
+    background-color: #2563eb;
+    color: rgb(255, 255, 255);
+  }
+
+  main a.btn, main button.btn {
+    background-color: #3b82f6; /* Azul moderado */
+    color: rgb(94, 9, 9);
+    border: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.25s ease;
+  }
+
+  main a.btn:hover, main button.btn:hover {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .list-group-item.btn {
+    background-color: #e0e7ff; /* Azul pastel */
+    color: #1e293b;
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .list-group-item.btn:hover {
+    background-color: #c7d2fe;
+    color: #1e293b;
+  }
+
+  aside {
+    max-height: 600px;
+    background: #f0f9ff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+    color: #334155;
+  }
+
+  h2, h3, h4 {
+    color: #1e40af; /* Azul oscuro para títulos */
+  }
+
+  footer {
+    background-color: #e0e7ff;
+    color: #334155;
+    border-top: 1px solid #cbd5e1;
+  }
+
+  .navbar-dark {
+    background-color: #2563eb; /* Azul */
+  }
+
+  .nav-link, .navbar-brand {
+    color: #e0e7ff !important;
+  }
+
+  .nav-link:hover {
+    color: #c7d2fe !important;
+  }
+
+  /* Responsive: ajuste pequeño margen para el sidebar en móvil */
+  @media (max-width: 767px) {
+    aside {
+      max-height: none;
+      margin-top: 2rem;
+    }
+  }
+</style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Header -->
+  
+
+  <!-- Main container -->
+  <div class="flex flex-1 flex-col md:flex-row p-8 gap-8 max-w-[1280px] mx-auto flex-grow">
+    <!-- Content area -->
+    <main class="flex flex-col flex-1 gap-10" role="main" tabindex="-1">
+
+      <!-- Explore & Contribute Buttons -->
+      <section aria-label="Sección Explora y Contribuye">
+        <h2 class="text-3xl font-semibold text-blue-700 mb-6">Explora y Contribuye</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <a href="https://becas.gob.do/" target="_blank" rel="noopener noreferrer" class="text-2xl bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg shadow-md text-center font-semibold transition" role="button">Becas Nacionales</a>
+          <a href="https://becas.gob.do/convocatorias/42" target="_blank" rel="noopener noreferrer" class="text-2xl bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg shadow-md text-center font-semibold transition" role="button">Becas Internacionales</a>
+          <a href="https://republica-dominicana.justia.com/nacionales/leyes/" target="_blank" rel="noopener noreferrer" class="text-2xl bg-blue-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg shadow-md text-center font-semibold transition" role="button">Leyes Dominicanas</a>
+        </div>
+      </section>
+
+      <!-- Recursos Académicos -->
+      <section aria-label="Recursos Académicos">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">Recursos Académicos</h2>
+        <ul class="list-group shadow-sm" role="list">
+        <a href="https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/biblioteca-virtual/poesia" class="list-group-item btn btn-outline-primary text-center" role="button">Bibliotecas digitales</a>
+          <a href= "https://www.youtube.com/@ligamunicipaldominicana7807" class="list-group-item btn btn-outline-primary text-center"role="button">Municipalid RD</a>
+           <a href="calendario.html" class="list-group-item btn btn-outline-primary text-center" role="button">Calendario Académico</a>
+        </ul>
+      </section>
+
+      <!-- Proyectos Estudiantiles -->
+      <section aria-label="Trabajos Estudiantiles">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">Trabajos Estudiantiles</h2>
+        <a href="https://drive.google.com/drive/folders/1IqVR71BojG6RsMXxPZvehkLehAfBitfA?usp=sharing" class="d-block mb-5 text-blue-600 fw-semibold hover:underline">Ver todos los proyectos</a>
+        <form id="formProyecto" enctype="multipart/form-data" class="mb-4" aria-label="Formulario para subir proyecto">
+          
+      </section>
+
+      <!-- Proyectos Municipales -->
+      <section aria-label="Proyectos Municipales" class="my-5">
+  <h2 class="text-2xl font-semibold text-gray-900 mb-3">Proyectos Municipales</h2>
+  <ul class="list-group shadow-sm">
+    <li class="list-group-item">
+      <a href="https://mapainversiones.economia.gob.do/#/proyectos/?zoom=8&center=19.107484799229553,-70.96824477855033&topLeft=20.862605835398384,-74.59647964183158&bottomRight=17.333540177711853,-67.34000991526908" 
+         target="_blank" rel="noopener noreferrer" 
+         class="list-group-item btn btn-outline-primary text-center">
+        Consulta los proyectos y recursos en Mapa Inversiones
+      </a>
+</li>
+<li class="list-group-item">
+  <a href="talleres.html" 
+     class="list-group-item btn btn-outline-primary text-center">
+    Talleres y Cursos
+  </a>
+</li>
+</ul>
+</section>
+
+      <!-- Preguntas y Respuestas -->
+      <section aria-label="Preguntas y Respuestas">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-3">Preguntas y Respuestas</h2>
+        <div id="listaComentarios" class="mb-4" aria-live="polite" aria-relevant="additions"></div>
+
+        <form id="formPregunta" aria-label="Formulario para enviar preguntas o respuestas">
+          <div class="mb-3">
+            <label for="nuevaPregunta" class="form-label">Haz tu pregunta o Regala una respuesta</label>
+            <input
+              type="text"
+              id="nuevaPregunta"
+              class="form-control"
+              placeholder="Escribe tu pregunta aquí..."
+              required
+              aria-required="true"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" aria-label="Enviar pregunta o respuesta">Enviar</button>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- Sidebar: Mision, Vision, Valores -->
+    <aside class="w-full md:w-1/4 bg-gradient-to-br from-green-50 via-white to-green-50 p-6 rounded-lg shadow-lg overflow-auto max-h-[bg-blue-500]" aria-label="Misión, Visión y Valores" tabindex="0">
+  <h3 class="text-2xl font-bold mb-6 text-green-700 border-b-2 border-green-300 pb-2">Misión, Visión y Valores</h3>
+  
+  <section class="mb-6">
+    <h4 class="text-xl font-semibold text-green-600 mb-2">Misión</h4>
+    <p class="text-gray-700 leading-relaxed">
+      Brindar una plataforma educativa municipal accesible e inclusiva que facilite el aprendizaje, la colaboración y el desarrollo de proyectos para estudiantes y la comunidad.
+    </p>
+  </section>
+
+  <section class="mb-6">
+    <h4 class="text-xl font-semibold text-green-600 mb-2">Visión</h4>
+    <p class="text-gray-700 leading-relaxed">
+      Ser el portal educativo líder en la región, reconocido por su innovación, calidad de contenido y contribución al progreso académico y social del municipio.
+    </p>
+  </section>
+
+  <section>
+    <h4 class="text-xl font-semibold text-green-600 mb-2">Valores</h4>
+    <ul class="list-disc list-inside text-gray-700 space-y-1">
+      <li>Compromiso</li>
+      <li>Inclusión</li>
+      <li>Transparencia</li>
+      <li>Innovación</li>
+      <li>Colaboración</li>
+    </ul>
+  </section>
+</aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#002D62] text-white text-center text-sm py-4">
+  &copy; 2025 Portal Educativo Municipal | Contacto: 
+  <a href="mailto:info@municipio.edu" class="text-[#d52b1e] hover:underline">info@municipio.edu</a>
+</footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Inline Script for Interaction -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bienvenida = document.getElementById('bienvenida');
+      const listaUsuarios = document.getElementById('listaUsuarios');
+      const listaComentarios = document.getElementById('listaComentarios');
+      const formPregunta = document.getElementById('formPregunta');
+      const formProyecto = document.getElementById('formProyecto');
+      const resultadoProyecto = document.getElementById('resultadoProyecto');
+
+      // Show welcome message using localStorage value
+     
+
+      // Fetch users from backend API and display in sidebar
+      async function cargarUsuarios() {
+        try {
+          const response = await fetch('/api/usuarios');
+          if (!response.ok) throw new Error('Error al cargar usuarios');
+          const usuarios = await response.json();
+
+          listaUsuarios.innerHTML = '';
+          usuarios.forEach(usuario => {
+            const li = document.createElement('li');
+            li.textContent = `${usuario.nombre} - ${usuario.correo}`;
+            listaUsuarios.appendChild(li);
+          });
+        } catch (error) {
+          listaUsuarios.innerHTML = '<li class="text-danger fw-semibold">No se pudieron cargar los usuarios.</li>';
+          console.error('Error fetching users:', error);
+        }
+      }
+      cargarUsuarios();
+
+      // Manage Q&A questions list
+      const preguntas = [];
+      formPregunta.addEventListener('submit', event => {
+        event.preventDefault();
+        const nuevaPreguntaInput = document.getElementById('nuevaPregunta');
+        const preguntaTexto = nuevaPreguntaInput.value.trim();
+        if (preguntaTexto) {
+          preguntas.push(preguntaTexto);
+          actualizarComentarios();
+          formPregunta.reset();
+          nuevaPreguntaInput.focus();
+        }
+      });
+
+      function actualizarComentarios() {
+        listaComentarios.innerHTML = '';
+        preguntas.forEach(pregunta => {
+          const div = document.createElement('div');
+          div.className = 'border-bottom py-2';
+          div.textContent = pregunta;
+          listaComentarios.appendChild(div);
+        });
+      }
+
+      // Handle project upload submission
+      formProyecto.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(formProyecto);
+        resultadoProyecto.textContent = 'Subiendo proyecto...';
+
+        try {
+          const res = await fetch('/api/proyectos', {
+            method: 'POST',
+            body: formData,
+          });
+
+          const data = await res.json();
+
+          if (res.ok) {
+            resultadoProyecto.textContent = data.mensaje || 'Proyecto subido exitosamente.';
+            formProyecto.reset();
+          } else {
+            resultadoProyecto.textContent = data.error || 'Error al subir el proyecto.';
+          }
+        } catch (error) {
+          resultadoProyecto.textContent = 'Error en la solicitud.';
+          console.error('Error uploading project:', error);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
