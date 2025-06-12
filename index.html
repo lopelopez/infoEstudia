@@ -162,14 +162,44 @@
     <main class="flex flex-col flex-1 gap-10" role="main" tabindex="-1">
 
       <!-- Explore & Contribute Buttons -->
-      <section aria-label="Sección Explora y Contribuye">
-        <h2 class="text-3xl font-semibold text-blue-700 mb-6">Explora y Contribuye</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <a href="https://becas.gob.do/" target="_blank" rel="noopener noreferrer" class="text-2xl bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg shadow-md text-center font-semibold transition" role="button">Becas Nacionales</a>
-          <a href="https://becas.gob.do/convocatorias/42" target="_blank" rel="noopener noreferrer" class="text-2xl bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg shadow-md text-center font-semibold transition" role="button">Becas Internacionales</a>
-          <a href="https://republica-dominicana.justia.com/nacionales/leyes/" target="_blank" rel="noopener noreferrer" class="text-2xl bg-blue-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg shadow-md text-center font-semibold transition" role="button">Leyes Dominicanas</a>
-        </div>
-      </section>
+      <section aria-label="Sección Explora y Contribuye" class="my-12 px-4">
+  <h2 class="text-3xl font-semibold text-blue-700 mb-6 text-center">Explora y Contribuye</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+
+    <!-- Becas Nacionales -->
+    <a href="https://becas.gob.do/" target="_blank" rel="noopener noreferrer" 
+       class="bg-red-600 hover:bg-red-700 text-white px-5 py-6 rounded-lg shadow-md font-semibold transition flex flex-col items-center">
+      <!-- Ícono gorrito con bandera -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path fill="#ffffff" d="M12 3L1 9l11 6 9-4.91v5.66H21v-7L12 3z" />
+        <path stroke="#ffffff" stroke-width="2" d="M12 21V15M12 3L1 9l11 6 9-4.91" />
+      </svg>
+      <span class="text-2xl">Becas Nacionales</span>
+    </a>
+
+    <!-- Becas Internacionales -->
+    <a href="https://becas.gob.do/convocatorias/42" target="_blank" rel="noopener noreferrer" 
+       class="bg-green-600 hover:bg-green-700 text-white px-5 py-6 rounded-lg shadow-md font-semibold transition flex flex-col items-center">
+      <!-- Ícono gorrito con avión -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path fill="#ffffff" d="M2.5 19.5l19-7.5-19-7.5v6.5l13 1-13 1z" />
+        <path stroke="#ffffff" stroke-width="2" d="M2.5 19.5l19-7.5-19-7.5v6.5l13 1-13 1z" />
+      </svg>
+      <span class="text-2xl">Becas Internacionales</span>
+    </a>
+
+    <!-- Leyes Dominicanas -->
+    <a href="https://republica-dominicana.justia.com/nacionales/leyes/" target="_blank" rel="noopener noreferrer" 
+       class="bg-blue-600 hover:bg-purple-700 text-white px-5 py-6 rounded-lg shadow-md font-semibold transition flex flex-col items-center">
+      <!-- Ícono mazo de juez -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke="#ffffff" stroke-width="2" d="M9 13l6-6m-6 0l6 6M5 21h14M4 17h16" />
+      </svg>
+      <span class="text-2xl">Leyes Dominicanas</span>
+    </a>
+
+  </div>
+</section>
 
       <!-- Recursos Académicos -->
       <section aria-label="Recursos Académicos">
