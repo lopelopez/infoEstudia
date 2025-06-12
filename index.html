@@ -5,25 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portal Educativo Municipal</title>
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <!-- Encabezado tipo bandera -->
-<!-- Header mejorado -->
-<header class="bg-gradient-to-r from-[#002D62] via-white to-[#d52b1e] py-4 px-6 shadow-md flex flex-col sm:flex-row justify-between items-center gap-4">
-  <div class="flex items-center gap-4">
-    <img src="logo.png" alt="Logotipo del Portal Educativo Municipal" class="h-14 w-14 rounded-full border-4 border-white shadow-sm" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto+Slab:ital,wght@1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+<header class="bg-gradient-to-r from-[#002D62] via-white to-[#d52b1e] py-6 px-10 shadow-xl flex flex-col sm:flex-row justify-between items-center gap-8">
+  <div class="flex items-center gap-6">
+   <img src="logo.png" alt="Logotipo del Portal Educativo Municipal"
+  class="h-20 w-20 rounded-lg border-4 border-white shadow-2xl object-cover transform transition-transform duration-500 hover:scale-110" />
     <div>
-      <h1 class="text-2xl sm:text-3xl font-extrabold text-black drop-shadow-md">Portal Educativo Municipal</h1>
-      <p class="text-sm font-medium italic text-black -800">¡Educación y orgullo dominicano!</p>
+      <h1 class="text-4xl font-extrabold text-gray-900" style="font-family: 'Poppins', sans-serif;">
+        Portal Educativo <span class="text-[#d52b1e]">Municipal</span>
+      </h1>
+      <p class="mt-1 text-lg italic text-gray-700 tracking-wide" style="font-family: 'Roboto Slab', serif;">
+        <span class="typing-animation">¡Educación y orgullo dominicano!</span>
+      </p>
     </div>
   </div>
-  <div id="bienvenida" class="text-lg sm:text-2xl italic font-semibold text-wihite-900" aria-live="polite">Bienvenido</div>
+  <div id="bienvenida" class="text-3xl italic font-semibold text-gray-900 select-none" aria-live="polite"
+    style="font-family: 'Poppins', sans-serif;">
+    Bienvenido
+  </div>
 </header>
 
-<!-- Navegación moderna -->
 <nav class="bg-[#002D62] text-white shadow-md sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
@@ -37,8 +43,8 @@
         <a href="#" class="text-white hover:text-blue-200 text-sm font-medium transition">Contacto</a>
       </div>
       <div class="md:hidden">
-        <button id="menu-toggle" class="text-white focus:outline-none">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-white focus:outline-none" aria-label="Abrir menú de navegación">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -55,15 +61,42 @@
   </div>
 </nav>
 
-<!-- Script para abrir/cerrar menú en móviles -->
 <script>
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    menuToggle.setAttribute('aria-expanded', !isHidden);
   });
 </script>
 
 <style>
+  /* Animación typing */
+  .typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #d52b1e; /* línea fija */
+  animation: typing 3.5s steps(30, end);
+  display: inline-block;
+
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
   body {
     font-family: 'Inter', Arial, sans-serif;
     background-color: #f9fafb; /* Gris muy suave para menos brillo */
