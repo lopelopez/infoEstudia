@@ -4,32 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portal Educativo Municipal</title>
-  <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- Encabezado tipo bandera -->
+<!-- Header mejorado -->
+<header class="relative overflow-hidden py-6 px-8 bg-white shadow-lg border-b-4 border-blue-900">
+  <!-- Cinta de bandera animada -->
+  <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#002D62] via-white to-[#D52B1E] animate-slide"></div>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto+Slab:ital,wght@1,400&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-
-<header class="bg-gradient-to-r from-[#002D62] via-white to-[#d52b1e] py-6 px-10 shadow-xl flex flex-col sm:flex-row justify-between items-center gap-8">
-  <div class="flex items-center gap-6">
-   <img src="logo.png" alt="Logotipo del Portal Educativo Municipal"
-  class="h-20 w-20 rounded-lg border-4 border-white shadow-2xl object-cover transform transition-transform duration-500 hover:scale-110" />
-    <div>
-      <h1 class="text-4xl font-extrabold text-gray-900" style="font-family: 'Poppins', sans-serif;">
-        Portal Educativo <span class="text-[#d52b1e]">Municipal</span>
-      </h1>
-      <p class="mt-1 text-lg italic text-gray-700 tracking-wide" style="font-family: 'Roboto Slab', serif;">
-        <span class="typing-animation">¡Educación y orgullo dominicano!</span>
-      </p>
+  <div class="relative z-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+    <!-- Logo + Nombre -->
+    <div class="flex items-center gap-5">
+      <img src="logo.png" alt="Logotipo" class="h-20 w-20 rounded-full border-4 border-white shadow-md object-cover ring-4 ring-red-600" />
+      <div>
+        <h1 class="text-4xl font-extrabold text-blue-900 tracking-wide drop-shadow-sm">Portal Educativo Municipal</h1>
+        <p class="mt-1 text-sm font-medium italic text-gray-600 uppercase tracking-widest">¡Educación y orgullo dominicano!</p>
+      </div>
     </div>
-  </div>
-  <div id="bienvenida" class="text-3xl italic font-semibold text-gray-900 select-none" aria-live="polite"
-    style="font-family: 'Poppins', sans-serif;">
-    Bienvenido
+
+    <!-- Bienvenida dinámica -->
+    <div id="bienvenida" class="text-xl sm:text-2xl font-semibold italic text-red-700 select-none animate-fade" aria-live="polite">
+      Bienvenido
+    </div>
   </div>
 </header>
 
+<!-- Navegación moderna -->
 <nav class="bg-[#002D62] text-white shadow-md sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
@@ -43,8 +47,8 @@
         <a href="#" class="text-white hover:text-blue-200 text-sm font-medium transition">Contacto</a>
       </div>
       <div class="md:hidden">
-        <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="text-white focus:outline-none" aria-label="Abrir menú de navegación">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -61,42 +65,15 @@
   </div>
 </nav>
 
+<!-- Script para abrir/cerrar menú en móviles -->
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuToggle.addEventListener('click', () => {
-    const isHidden = mobileMenu.classList.toggle('hidden');
-    menuToggle.setAttribute('aria-expanded', !isHidden);
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
   });
 </script>
 
 <style>
-  /* Animación typing */
-  .typing-animation {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 4px solid #d52b1e; /* línea fija */
-  animation: typing 3.5s steps(30, end);
-  display: inline-block;
-
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes blink-caret {
-    50% {
-      border-color: transparent;
-    }
-  }
-
   body {
     font-family: 'Inter', Arial, sans-serif;
     background-color: #f9fafb; /* Gris muy suave para menos brillo */
@@ -106,7 +83,24 @@
     margin: 0;
     color: #1e293b; /* Azul oscuro para texto */
   }
+@keyframes slide {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
 
+  .animate-slide {
+    background-size: 200% auto;
+    animation: slide 6s linear infinite;
+  }
+
+  @keyframes fade {
+    0% { opacity: 0; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade {
+    animation: fade 1s ease-in-out forwards;
+  }
   .fondo-bandera {
     background: linear-gradient(90deg, #002D62 33.3%, #ffffff 33.3% 66.6%, #d52b1e 66.6%);
   }
